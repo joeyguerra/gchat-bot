@@ -23,19 +23,19 @@ Once you've got those environment variables defined in the `.env` file (on Glitc
 Run on Dev Environment
 =================================================
 
-Need to have a `.env` file with the environment variables and set them when running `npm start`.
-
 ```bash
-sh -ac '. .env;PORT=3000 npm start'
+npm i
+npm run build
+npm t
+npm run dev
 ```
+
+Run on Prod
+=================================================
 
 The assumption here is that in production, the hosting environment will have a way to set those environment variables.
 
-Handy Things
-=================================================
-
-The environment variables are stored in a `.env` file locally on my machine. I use this command to get them into a line so that I can set them in one go.
-
 ```bash
-echo $(grep -v '^#' .env | xargs -0)
+npm i
+npm start
 ```

@@ -1,0 +1,52 @@
+{
+  "name": "pipbot",
+  "version": "1.0.0",
+  "description": "Google chat bot for things like Dallas Parking Ticket Validation and FAQs.",
+  "main": "server.mjs",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "NODE_OPTIONS=\"--experimental-modules\" webpack -d",
+    "test": "NODE_OPTIONS=\"--experimental-modules\" tap examples/**/*.mjs",
+    "start": "node --experimental-modules server.mjs",
+    "test:one": "NODE_OPTIONS=\"--experimental-modules\" nodemon tap",
+    "test:local": "env $(cat .env | grep -v \"#\" | xargs -0) NODE_OPTIONS=\"--experimental-modules\" tap examples/**/*.mjs",
+    "dev": "env $(cat .env | grep -v \"#\" | xargs -0) PORT=3000 npm start"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.17.0",
+    "googleapis": "^40.0.0",
+    "mkdirp": "^0.5.1",
+    "natural": "^0.6.3",
+    "npmlog": "^4.1.2"
+  },
+  "engines": {
+    "node": "12.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twlabs/pipbot.git"
+  },
+  "keywords": [
+    "chatbot",
+    "google",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Joey Guerra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twlabs/pipbot/issues"
+  },
+  "homepage": "https://github.com/twlabs/pipbot#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.19.0",
+    "tap": "^14.1.10",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  }
+}
